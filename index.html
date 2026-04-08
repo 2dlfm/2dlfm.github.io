@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2D-LFM: Lifting Foundation Model without 3D Supervision</title>
+    <meta
+      name="description"
+      content="Project page for 2D-LFM: Lifting Foundation Model without 3D Supervision."
+    >
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <header class="site-shell">
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="#">2D-LFM</a>
+        <div class="topbar-links">
+          <a href="#abstract">Abstract</a>
+          <a href="#bibtex">BibTeX</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <!-- Update the venue line if needed. -->
+        <p class="eyebrow">Accepted to CVPR 2026</p>
+        <h1>2D-LFM: Lifting Foundation Model without 3D Supervision</h1>
+
+        <p class="authors">
+          Mosam Dabhi<sup>1*</sup>
+          <span class="author-separator">|</span>
+          Irhas Gill<sup>2*</sup>
+          <span class="author-separator">|</span>
+          L&#225;szl&#243; A. Jeni<sup>1</sup>
+          <span class="author-separator">|</span>
+          Simon Lucey<sup>2</sup>
+        </p>
+        <p class="affiliations">
+          <sup>1</sup>Carnegie Mellon University
+          <span class="author-separator">|</span>
+          <sup>2</sup>Adelaide University
+        </p>
+        <p class="status-note author-note"><sup>*</sup> Equal contribution.</p>
+
+        <div class="button-row" role="group" aria-label="Project links">
+          <a
+            class="button primary"
+            href="paper.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Paper
+          </a>
+          <a
+            class="button"
+            href="https://github.com/2dlfm/2dlfm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Code
+          </a>
+          <a class="button" href="#abstract">Abstract</a>
+          <a class="button" href="#bibtex">BibTeX</a>
+        </div>
+
+        <p class="status-note">
+          Add arXiv, poster, or video links here once those are public.
+        </p>
+      </section>
+    </header>
+
+    <main class="site-shell">
+      <section class="content-card" id="results">
+        <div class="section-heading">
+          <h2>Comparison with VGGT</h2>
+          <p>Given only 2D landmarks, 2D-LFM recovers cleaner object-specific 3D structure than depth-based lifting through VGGT.</p>
+        </div>
+
+        <figure class="teaser-figure">
+          <picture>
+            <source srcset="assets/figure1.webp" type="image/webp">
+            <img
+              class="teaser-image"
+              src="assets/figure1.png"
+              alt="Main comparison figure showing 2D-LFM against VGGT on 3D lifting results"
+            >
+          </picture>
+        </figure>
+
+        <p class="figure-caption">
+          Main paper figure comparing our 2D-only lifting model against VGGT, with ground truth in red and predictions in blue.
+        </p>
+      </section>
+
+      <section class="content-card" id="overview">
+        <div class="section-heading">
+          <h2>Architecture Overview</h2>
+          <p>2D-LFM preserves landmark correspondence by injecting positional encoding at every attention layer instead of only once at the input.</p>
+        </div>
+
+        <figure class="teaser-figure">
+          <picture>
+            <source srcset="assets/overview.webp" type="image/webp">
+            <img
+              class="teaser-image"
+              src="assets/overview.png"
+              alt="Architecture overview diagram for the 2D-LFM model"
+            >
+          </picture>
+        </figure>
+
+        <p class="figure-caption">
+          Architecture overview from the paper illustrating how repeated positional encoding preserves correspondence structure for 2D-to-3D lifting.
+        </p>
+      </section>
+
+      <section class="content-card" id="abstract">
+        <div class="section-heading">
+          <h2>Abstract</h2>
+        </div>
+        <p class="body-copy">
+          Recent vision foundation models give the impression that 3D reconstruction from RGB is largely
+          solved. Yet these systems struggle with object-specific 3D structure: the fine-grained geometry
+          implied by an object's landmarks or skeleton. In this paper, we show that when a model is given
+          only 2D landmarks, it can recover more accurate 3D structure than state-of-the-art depth-from-RGB
+          foundation models. Classical lifting approaches such as PAUL demonstrate this principle but do not
+          scale beyond single categories, while methods like 3D-LFM scale but require extensive 3D
+          supervision. We present the first lifting foundation model that learns object-specific 3D geometry
+          using only 2D supervision. The key idea is to inject correspondence structure into the model via a
+          positional encoding inspired by classical structure-from-motion. This simple inductive bias enables
+          robust, object-agnostic 3D lifting that rivals or exceeds recent 3D-supervised approaches,
+          revealing that landmark-based lifting remains a powerful and under-exploited paradigm for 3D
+          understanding.
+        </p>
+      </section>
+
+      <section class="content-card" id="bibtex">
+        <div class="section-heading heading-row">
+          <h2>BibTeX</h2>
+          <button class="copy-button" type="button" data-copy-target="bibtex-block">Copy</button>
+        </div>
+        <pre id="bibtex-block">@inproceedings{dabhi2026dlfm,
+  title     = {2D-LFM: Lifting Foundation Model without 3D Supervision},
+  author    = {Dabhi, Mosam and Gill, Irhas and Jeni, Laszlo A. and Lucey, Simon},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
+}</pre>
+        <p class="status-note">Update the year or citation key if your final camera-ready citation differs.</p>
+      </section>
+    </main>
+
+    <footer class="footer site-shell">
+      <p>
+        This project page is inspired by the
+        <a href="https://3dlfm.github.io/" target="_blank" rel="noopener noreferrer">3D-LFM</a>
+        and
+        <a href="https://nerfies.github.io/" target="_blank" rel="noopener noreferrer">Nerfies</a>
+        project websites.
+      </p>
+    </footer>
+
+    <script src="assets/site.js"></script>
+  </body>
+</html>

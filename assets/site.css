@@ -1,0 +1,302 @@
+:root {
+  --page-bg: #f3efe6;
+  --page-bg-accent: #e8eef6;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --text: #142235;
+  --muted: #506176;
+  --line: rgba(20, 34, 53, 0.12);
+  --primary: #145c83;
+  --primary-strong: #0f4765;
+  --shadow: 0 22px 50px rgba(20, 34, 53, 0.08);
+  --radius-xl: 28px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shell-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(20, 92, 131, 0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(104, 142, 190, 0.16), transparent 28%),
+    linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-accent) 100%);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-shell {
+  width: min(calc(100% - 2rem), var(--shell-width));
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0 0.2rem;
+}
+
+.brand,
+.topbar-links a {
+  text-decoration: none;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 0 3.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(20, 92, 131, 0.18);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 14ch;
+  margin: 0 auto 1.2rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 1.05;
+}
+
+.authors,
+.affiliations,
+.status-note,
+.body-copy,
+.figure-caption,
+.section-heading p,
+.footer {
+  color: var(--muted);
+}
+
+.authors,
+.affiliations {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.affiliations {
+  margin-top: 0.4rem;
+}
+
+.author-separator {
+  margin: 0 0.45rem;
+  color: rgba(80, 97, 118, 0.45);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 2rem 0 0.8rem;
+}
+
+.button,
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.button:hover,
+.copy-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(20, 92, 131, 0.24);
+  box-shadow: 0 12px 28px rgba(20, 34, 53, 0.1);
+}
+
+.button.primary {
+  background: var(--primary);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.button.primary:hover {
+  background: var(--primary-strong);
+}
+
+.status-note {
+  margin: 0.8rem auto 0;
+  max-width: 52ch;
+  font-size: 0.96rem;
+}
+
+.author-note {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+.content-card {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: var(--radius-xl);
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  margin-bottom: 1.2rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.25rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.section-heading p,
+.figure-caption,
+.body-copy {
+  margin: 0;
+}
+
+.teaser-figure {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+}
+
+.teaser-figure picture {
+  display: block;
+}
+
+.teaser-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure-caption {
+  margin-top: 0.9rem;
+}
+
+.body-copy {
+  width: 100%;
+  max-width: none;
+  font-size: 1.04rem;
+}
+
+.heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+pre {
+  margin: 0;
+  overflow-x: auto;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  background: #172331;
+  color: #eef4fb;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.copy-button {
+  min-height: 42px;
+  padding: 0.6rem 1rem;
+}
+
+.copy-button.is-copied {
+  background: rgba(20, 92, 131, 0.12);
+  color: var(--primary);
+  border-color: rgba(20, 92, 131, 0.2);
+}
+
+.footer {
+  padding: 0 0 2.25rem;
+  font-size: 0.96rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 3.8rem 0 2.5rem;
+  }
+
+  .content-card {
+    padding: 1.2rem;
+  }
+
+  .heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
